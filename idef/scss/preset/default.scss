@@ -1,0 +1,600 @@
+// Bootstrap variables
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #616064 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$blue:    #58AAC0 !default;
+$indigo:  #6610f2 !default;
+$purple:  #613d7c !default;
+$pink:    #e83e8c !default;
+$red:     #d9534f !default;
+$orange:  #f0ad4e !default;
+$yellow:  #ff7518 !default;
+$green:   #5cb85c !default;
+$teal:    #20c997 !default;
+$cyan:    #5bc0de !default;
+
+$primary:       $blue !default;
+$secondary:     $gray-800 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+// Options
+$enable-rounded: true !default;
+
+// Body
+$body-color:    $gray-800 !default;
+
+// Fonts
+$font-size-base: 0.9375rem !default;
+$headings-font-weight:   300 !default;
+
+// Navbar
+$navbar-dark-hover-color:           rgba($white, 1) !default;
+$navbar-light-hover-color:          rgba($black, .9) !default;
+
+// Breadcrumbs
+$breadcrumb-padding-y:              .25rem !default;
+$breadcrumb-padding-x:              0 !default;
+$breadcrumb-item-padding:           .5rem !default;
+$breadcrumb-margin-bottom:          0 !default;
+$breadcrumb-bg:                     transparent !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-rtl: "/" !default;
+
+// Alerts
+$alert-border-width:                0 !default;
+
+$card-group-margin: .25rem;
+
+// stylelint-disable
+$theme-colors: () !default;
+$theme-colors: map-merge((
+    primary: $primary,
+    secondary: $gray-200,
+    success: $success,
+    info: $info,
+    warning: $orange,
+    danger: $danger,
+    light: $gray-100,
+    dark: $gray-800
+), $theme-colors);
+// stylelint-enable
+
+// Import FontAwesome.
+@import "fontawesome";
+
+// Import All of Bootstrap
+@import "bootstrap";
+
+// Import Core moodle CSS
+@import "moodle";
+
+// Preset CSS
+
+body {
+  font-family: 'Open Sans', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .path-calendar .maincalendar .calendar-controls .current, .h3, .h4, .h5, .h6 {
+  font-family: 'Maven Pro', sans-serif; }
+
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+    max-height: 90px;
+    border-bottom: 10px solid #616064;
+}
+
+#page {
+    margin-top: 90px;
+}
+
+.filemanager-container,
+.filepicker-filelist {
+    border: $border-width solid $border-color;
+}
+
+// Rounded user pictures
+.userpicture {
+    border-radius: 50%;
+}
+
+.block {
+    background-color: $gray-100;
+}
+
+.columnleft .block, .columnright .block {
+    background:  $white;
+    color:$blue;
+}
+
+.columnleft .block h5, .columnright .block h5{
+    font-weight: 500;
+    background: $blue;
+    color: $white;
+    padding: 5px;
+    margin: -15px;
+    position: absolute;
+    width: calc(100% - 2px);
+    z-index: 0;
+    font-size: 1rem;
+}
+
+
+.columnleft .block .card-text > a, .columnright .block .card-text > a{
+    color: $blue;
+}
+
+.columnleft .block .card-text, .columnright .block .card-text{
+    margin-top: 2rem!important;
+}
+
+.columnleft .block .block-controls, .columnright .block .block-controls{
+    margin-top: -10px;
+}
+
+.columnleft .block .block-controls .icon, .columnright .block .block-controls .icon, .columnleft .block .block-controls .dropdown-toggle::after, .columnright .block .block-controls .dropdown-toggle::after{
+    z-index: 1;
+    position: relative;
+    color: $white;
+}
+
+.columnleft .block .block-controls .dropdown-menu .icon, .columnright .block .block-controls .dropdown-menu .icon{
+    color: $secondary;
+}
+
+
+/*COURSE FORMAT*/
+
+.ctopics .sectionhead {
+	border-radius:0 !important;
+}
+
+.ctopics .sectionname a {
+	color:$white;
+}
+
+.ctopics h3, .ctopics h4 {
+	font-size: 1.10rem;
+}
+
+.ctopics .cps_centre{
+	display:none;
+}
+
+.course-content ul.ctopics li.section .content .toggle-arrow span.toggle_closed, .course-content ul.ctopics li.section .content .toggle-arrow span.toggle_open, body.jsenabled .course-content ul.ctopics li.section .content .toggle-arrow span.toggle_open, #toggle-all .content .toggle-arrow h4 span.off {
+    background-image: url(/theme/image.php/idef/format_topcoll/1573146975/arrow_down_glow);
+    background-size: 10px;
+    background-position: 9px;
+}
+
+body.jsenabled .course-content ul.ctopics li.section .content .toggle-arrow span.toggle_closed, #toggle-all .content .toggle-arrow h4 span.on, body#page-admin-setting-formatsettingtopcoll select#id_s_format_topcoll_defaulttoggleiconset option[value="arrow"], body#page-course-edit select#id_toggleiconset option[value="arrow"] {
+    background-image: url(/theme/image.php/idef/format_topcoll/1573146975/arrow_right_glow);
+    background-size: 10px;
+    background-position: 9px;
+}
+
+.ctopics .tceditsection {
+  display:none !important;
+}
+
+.ctopics .mdl-right{
+	padding-bottom:15px;
+}
+
+.ctopics .topcoll-display-instructions{
+	padding-bottom:15px;
+	padding-top:15px;
+}
+
+.ctopics li.section.main {
+	border-bottom: none !important;
+    margin-bottom: 1px !important;
+}
+
+.ctopics .cttoggle, .ctopics .cps_centre{
+	display:none !important;
+}
+
+
+.introduction_course{
+	display:table;
+}
+
+.introduction_course .courseimage{
+	width: 35%;
+	float: left;
+}
+.introduction_course .courseimage img{
+	width: 100%;
+    height: auto;
+}
+
+.introduction_course .summary{
+	display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 20px !important;
+}
+
+
+/*NAVBAR*/
+
+.blockcolumn .card-body, .blockcolumn .card{
+	-webkit-box-shadow: 0px 2px 10px -5px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 2px 10px -5px rgba(0,0,0,0.5);
+	box-shadow: 0px 2px 10px -5px rgba(0,0,0,0.5);
+}
+
+.canvas-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  z-index: 0;
+}
+
+#page-navbar, .ml-auto.d-flex{
+  z-index: 1;
+}
+
+
+/*COURSES LIST FRONTPAGE*/
+
+.courses{
+	display: flex;
+}
+
+.coursebox {
+    padding: 1.5rem;
+    width: calc(50% - 40px);
+    float: left;
+    margin: 20px;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    position: relative;
+	-webkit-box-shadow: 0px 2px 10px -5px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 2px 10px -5px rgba(0,0,0,0.5);
+	box-shadow: 0px 2px 10px -5px rgba(0,0,0,0.5);
+}
+
+.courses .coursebox.even {
+    background-color: rgba(0,0,0,0);
+}
+
+.coursebox .summary{
+    height: auto !important;
+}
+
+.coursebox>.info>.coursename a {
+    background-image: none;
+	padding-left: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.coursebox .content .coursecat, .coursebox .content .summary, .coursebox .content .courseimage, .coursebox .content .coursefile, .coursebox .content .teachers, .coursebox.remotecoursebox .remotecourseinfo, .coursebox .content .customfields-container {
+    width: calc(50% - 10px);
+    padding: 0;
+    height: 150px;
+    margin: 5px;
+	overflow:hidden;
+}
+
+.coursebox .content .courseimage img {
+    max-width: none;
+    max-height: 100%;
+}
+
+.coursebox .info {
+    width: 100%;
+    display: flex;
+}
+
+.coursebox .content {
+    padding-top: 15px;
+}
+
+
+/*SECCION 0*/
+
+
+#section-0 li.activity {
+    padding: 1.5rem;
+    width: calc(25% - 10px);
+    float: left;
+    margin: 5px;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    position: relative;
+	-webkit-box-shadow: 0px 2px 10px -5px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 2px 10px -5px rgba(0,0,0,0.5);
+	box-shadow: 0px 2px 10px -5px rgba(0,0,0,0.5);
+}
+
+#section-0 .section {
+    display:flex;
+}
+
+#section-0 .content {
+    margin:0 !important;
+}
+
+#section-0 .mod-indent-outer {
+    margin: 0 auto;
+}
+
+#section-0 .actions {
+    top: -20px;
+    right: -51px;
+}
+
+.editing #section-0 .activityinstance {
+    padding-right: 0px;
+}
+	
+
+
+#page-footer .container{
+	width: 100%;
+    max-width: none;
+}
+
+#page-footer .container .sitelink{
+	right: 20px;
+    position: absolute;
+}
+
+/*SCORM COURSE*/
+
+#page-mod-scorm-player div[role*="main"]{
+	width:100%;
+}
+
+#page-mod-scorm-player #scorm_object{
+	width:100% !important;
+}
+
+
+/*ICONOS*/
+
+
+.course-content img[src*="forum"] {
+    display: none;
+}
+
+.course-content  a[href*="forum"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+.course-content img[src*="feedback"] {
+    display: none;
+}
+
+.course-content a[href*="feedback"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+
+.course-content img[src*="quiz"] {
+    display: none;
+}
+
+.course-content a[href*="quiz"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+
+.course-content img[src*="scorm"] {
+    display: none;
+}
+
+.course-content a[href*="scorm"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+.course-content img[src*="pdf"] {
+    display: none;
+}
+
+.course-content a[href*="pdf"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+
+.course-content img[src*="glossary"]{
+    display: none;
+}
+
+.course-content a[href*="glossary"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+.course-content img[src*="choice"]{
+    display: none;
+}
+
+.course-content a[href*="choice"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+
+.course-content img[src*="workshop"]{
+    display: none;
+}
+
+.course-content a[href*="workshop"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+
+.course-content img[src*="folder"]{
+    display: none;
+}
+
+.course-content a[href*="folder"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+
+.course-content img[src*="url"]{
+    display: none;
+}
+
+.course-content a[href*="url"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+
+.course-content img[src*="book"]{
+    display: none;
+}
+
+.course-content a[href*="book"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+
+.course-content img[src*="survey"]{
+    display: none;
+}
+
+.course-content a[href*="survey"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+.course-content img[src*="chat"]{
+    display: none;
+}
+
+.course-content a[href*="chat"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+
+.course-content img[src*="page"] {
+    display: none;
+}
+
+.course-content a[href*="page"]:before {
+   content: "";
+   font: normal normal normal 14px/1 FontAwesome;
+   padding-right: 10px;
+   font-size: 25px;
+}
+
+/*RESPONSIVE*/
+
+
+@media (min-width: 995px) and (max-width: 1313px) {
+  .coursebox .content .teachers, .coursebox .content .courseimage, .coursebox .content .coursefile, .coursebox .content .customfields-container {
+    width: calc(100% - 10px) !important;
+  }
+  .coursebox .summary{
+	width: calc(100% - 10px) !important;
+  }  
+  .coursebox .content .courseimage img {
+    max-width: 100%;
+    max-height: none;
+  }
+}
+
+@media (max-width: 995px) {
+  .coursebox {
+    width: calc(100% - 40px) !important;
+  }
+  .course-content .courseimage{
+	width: 100%;
+    padding-bottom: 20px;
+  }
+  .courses{
+	display: block;
+  }
+  #section-0 li.activity {
+    width: calc(100% - 10px);
+  }
+
+  #section-0 .section {
+    display:block;
+  }
+}
+
+@media (max-width: 600px) {
+  .coursebox .content .teachers, .coursebox .content .courseimage, .coursebox .content .coursefile, .coursebox .content .customfields-container {
+    width: calc(100% - 10px)!important;
+  }
+  .coursebox .summary{
+	width: calc(100% - 10px)!important;
+  }  
+  .coursebox .content .courseimage img {
+    max-width: 100%;
+    max-height: none;
+  }
+}
+
+
+#page-my-index {
+    background-color: $white;
+}
+// Reset the default styling back to the bootstrap defaults for
+// the secondary outline button because gray-200 is much too light
+// for an outline button.
+.btn-outline-secondary {
+    @include button-outline-variant($gray-600);
+    border-color: $border-color;
+}
