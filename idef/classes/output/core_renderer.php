@@ -1,4 +1,3 @@
-Skip to content
 <?php
 // This file is part of Moodle - http://moodle.org/
 //
@@ -22,8 +21,9 @@ Skip to content
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 namespace theme_idef\output;
+
 defined('MOODLE_INTERNAL') || die;
-global $CFG;
+
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
@@ -35,4 +35,5 @@ global $CFG;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class core_renderer extends \core_renderer {
+	
 }
