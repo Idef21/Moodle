@@ -17268,16 +17268,6 @@ span[data-flexitour="container"][x-placement="right"], span[data-flexitour="cont
   padding-top: 0 !important;
   /* stylelint-disable-line declaration-no-important */ }
   
-  
-  
-#page-header .page-header-headings {
-    background-image: url("http://127.0.0.1/3_7/theme/idef/pix/mylogo.png") !important;
-    width: 100% !important;
-    height: 88px !important;
-    background-repeat: no-repeat
-
-}
-
 .page-context-header h1 {
     margin-left: 330px;
     margin-top: 36px
